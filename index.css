@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.topA{
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_640.jpg);
+}
+
+.main{
+    width: 100vw;
+    
+    
+}
+
+
+
+.topA button{
+    margin-top:10px;
+    margin-left: 80vw;
+    width: 15vw;
+    height: 6vh;
+    background-color: rgb(78, 125, 167);
+    color: white;
+   border-radius: 5px;
+   border: none;
+   box-shadow: 2px 2px solid rgb(33, 56, 63);
+   cursor: pointer;
+}
+button:hover{
+    background-color: rgb(58, 58, 83);
+}
+
+.formcont{
+    margin-left: 10vw;
+    
+   
+    
+    height: 80vh;
+}
+
+#form{
+    background-color:#c8e5e1;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+   gap: 20px;
+   align-items: center;
+   justify-content: center;
+   margin-top: -80vh;
+   width: 50%;
+   margin-left: 25vw;
+   border-radius: 10px;
+   
+
+}
+
+#proName,#proImage,#proprice,#prodesc{
+    width: 70%;
+    height: 4vh;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #042f62;
+    color: white;
+}
+
+::placeholder{
+    color: rgb(173, 162, 162);
+}
+#proadd{
+    border: none;
+    border-radius: 5px;
+    width: 10vw;
+    height: 5vh;
+    margin-left: 15vw;
+    background-color: #bacecd;
+    outline: none;
+    
+}
+
+#cancel{
+    color: black;
+    border: none;
+    
+
+
+}
+
+#proadd:hover{
+    background-color: #042f62;
+    color: white;
+}
+
+.proList{
+    display: flex;
+    
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 5px ;
+    margin: 20px;
+   
+}
+
+.item{
+    
+    padding: 10px;
+    text-align:right ;
+    text-decoration: wavy;
+    background-color: aliceblue;
+    border: 1px solid darkblue;
+    height: auto; 
+    box-shadow:2px 2px 2px 2px  ;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+    
+    
+}
+
+.item img{
+    height: 150px;
+    width: 200px;
+    
+}
+
+#buttons{
+   
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0vh;
+}
+
+
+.item button{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+ margin-left: 20px;
+    background-color: #bacecd;
+    margin-top: 5vh;
+    
+}
+
+.item button:hover{
+    background-color:#042f62 ;
+}
+
+
+.formdiv{
+   background-color:aliceblue;
+   width: 50vw;
+   height: 70vh;
+   justify-content: center;
+   padding: 5px;
+   margin-top:4 vh;
+   
+   
+   
+}
+
+#upform{
+   
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 7px;
+}
+
+#myurl,#myname,#myprice,#mydesc{
+    width: 70%;
+    height: 4vh;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #042f62;
+    color: rgb(170, 167, 167);
+}
+#submitbttn{
+    
+    margin-left: 70%;
+}
+#cancel{
+    margin-left: 70%;
+    margin-top: -150%;
+    background-color: transparent;
+    color: black;
+}
+
+@media screen and (min-width:375px) {
+    /* .item{
+    
+    width: 300px;
+
+    
+} */
+
+/* .item img{
+    height: 250px;
+    width: 250px;
+    
+} */
+
+}
+@media screen and (max-width:932px){
+    /* .item{
+    
+        width: 90%;
+        font-size: 30px;
+    
+        
+    }
+
+    .item img{
+        height: 300px;
+        width: 100%;
+        
+    } */
+
+    /* .item button{
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        width: 60vw;
+        height: 60px;
+     margin-left: 20px;
+        background-color: #bacecd;
+        margin-top: 5vh;
+        font-size: 30px;
+        
+    } */
+    
+}
+
+/*@media screen and (max-width:375px) {
+    .item{
+        padding: 15px;
+        text-align: center;
+        height: 45vh;
+        width: 100%;
+    }
+
+    .item button{
+        border: none;
+        border-radius: 5px;
+        width: 15vw;
+        height: 7vh;
+        margin-left: 20px;
+        background-color: #bacecd;
+        
+    }
+
+    .item img{
+        height: 200px;
+        width: 250px;
+    }
+
+    .top{
+        height: 60vh;
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+    .item{
+        padding: 15px;
+        text-align: center;
+        height: 45vh;
+        width: 100%;
+    }
+
+    .item button{
+        border: none;
+        border-radius: 5px;
+        width: 30vw;
+        height: 7vh;
+        margin-left: 20px;
+        background-color: #bacecd;
+        
+    }
+
+    .item img{
+        height: 400px;
+        width: 250px;
+    }
+
+    .top{
+        height: 60vh;
+    }
+    
+}
+

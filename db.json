@@ -1,0 +1,39 @@
+{
+  "product": [
+    {
+      "proImage": "https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/78/5626121/1.jpg?1066",
+      "proname": "Skating Shoes",
+      "proprice": "3400",
+      "prodesc": "Roller Speed Skating Shoes",
+      "id": "683"
+    },
+    {
+      "proImage": "https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/60/9179061/1.jpg?4715",
+      "proname": "Safety Cap",
+      "proprice": "550",
+      "prodesc": "Type 1 Road Cycling Bicycle Equipment Red Bike Men Women EPS+PC Aero Skateboar Sport Safety Cap Aeone size M 54~60cm D",
+      "id": "153"
+    },
+    {
+      "id": "37",
+      "proImage": "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/86/753136/1.jpg?9096",
+      "proName": "Blender",
+      "proprice": "70",
+      "prodesc": "Sokany High Quality Electric Bullet Nutri Blender Juicer - 900W"
+    },
+    {
+      "proImage": "https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/67/647943/1.jpg?1747",
+      "proName": "wardrobe",
+      "proprice": "230",
+      "prodesc": "HOMMY 3 Column Portable Wardrobe - Brown Cover",
+      "id": "278"
+    },
+    {
+      "id": "861",
+      "proImage": "https://ke.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/84/5484131/1.jpg?1843",
+      "proName": "Tecno",
+      "proprice": "229",
+      "prodesc": "Tecno Camon 20 6.67-inch 256GB+8GB RAM-64 MP-battery-5000mAh-+ALL GIFTS,./CY//"
+    }
+  ]
+}
