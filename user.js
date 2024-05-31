@@ -125,14 +125,17 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
         displayCart();
         cart.classList.toggle('show');
     }
-    viewbttn.addEventListener('click', () => toggleCart());
+    viewbttn.addEventListener('click', () => toggleCart);
     function addToCart(product) {
         cartitem.push(product);
+        console.log("Product added to cart:", product);
+        localStorage.setItem('cartitem', JSON.stringify(cartitem));
         displayCart();
     }
     function removefromcart(product) {
-        cartitem.filter(item => item.id !== product.id);
+        cartitem = cartitem.filter(item => item.id !== product.id);
         displayCart();
     }
     allProducts = (yield fetchProducts()).map(product => new Product(product.id, product.proImage, product.proName, product.proprice, product.prodesc));
+    console.log("All products:", allProducts);
 }));
