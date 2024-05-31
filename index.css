@@ -16,6 +16,10 @@
     
 }
 
+.display{
+    background-color: pink;
+}
+
 
 
 .topA button{
@@ -95,7 +99,7 @@ button:hover{
     color: white;
 }
 
-.proList{
+.proList, #productlist{
     display: flex;
     
     justify-content: center;
@@ -194,6 +198,7 @@ button:hover{
     background-color: transparent;
     color: black;
 }
+
 
 @media screen and (min-width:375px) {
     /* .item{

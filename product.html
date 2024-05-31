@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+
+<body>
+
+    <a href="index.html"></a>
+    <div class="myItem">
+
+    </div>
+    <script>
+        let id = window.location.search.replace("?id", "")
+
+        console.log(id);
+
+        let response = new Promise(async (resolve, reject) => {
+            try {
+                let products = await fetch(`http://localhost:3000/product/${id}`)
+                const data = await products.json()
+                resolve(data)
+
+                let myItem = document.querySelector(".myItem")
+                let stockitem = [data]
+
+                stockitem.forEach((product, index) => {
+                    const item = document.createElement('div')
+                    item.className = "item"
+                    item.id = `product-${product.id}`
+
+                    const itemname = document.createElement('p')
+                    itemname.id = 'itemname'
+                    itemname.textContent = product.proName
+                    itemname.style.fontFamily = "bold"
+
+                    const itempic = document.createElement('img')
+                    itempic.id = 'itempic'
+                    itempic.setAttribute(`src`, product.proImage)
+
+                    const itemprice = document.createElement('p')
+                    itemprice.id = 'itemprice '
+                    itemprice.textContent = '$' + product.proprice + ''
+
+                    const itemdesc = document.createElement('p')
+                    itemdesc.id = 'itemdesc'
+                    itemdesc.textContent = product.prodesc
+
+            
+
+                    item.appendChild(itempic)
+                    item.appendChild(itemname)
+
+                    item.appendChild(itemdesc)
+                    item.appendChild(itemprice)
+
+                    myItem.appendChild(item)
+
+                })
+            } catch (error) {
+
+            }
+
+
+        })
+    </script>
+
+
+
+</body>
+
+</html>

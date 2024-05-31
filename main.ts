@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       item.appendChild(buttons)
 
       proList.appendChild(item)
+      display.appendChild(proList)
 
 
 

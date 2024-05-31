@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 item.appendChild(itemprice);
                 item.appendChild(buttons);
                 proList.appendChild(item);
+                display.appendChild(proList);
                 updateitem.addEventListener('click', () => __awaiter(this, void 0, void 0, function* () {
                     console.log("update button clicked");
                     let formdiv = document.createElement('div');
