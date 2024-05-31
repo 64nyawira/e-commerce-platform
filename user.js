@@ -11,9 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, void 0, function* () {
     const searchInput = document.getElementById("searchin");
     const productList = document.getElementById("productlist");
-    if (!productList)
+    const cart = document.getElementById('cart');
+    const viewbttn = document.getElementById("viewbttn");
+    viewbttn.addEventListener('click', () => displayCart());
+    if (!productList || !cart)
         return;
     let allProducts = [];
+    let cartitem = [];
     class Product {
         constructor(id, proImage, proName, proprice, prodesc) {
             this.id = id;
@@ -67,18 +71,14 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
                 itemDesc.textContent = product.prodesc;
                 const buttons = document.createElement('div');
                 buttons.id = 'buttons';
-                const deleteItem = document.createElement('button');
-                deleteItem.id = "delete";
-                deleteItem.textContent = "Delete";
-                const updateItem = document.createElement('button');
-                updateItem.id = "updateitem";
-                updateItem.textContent = "Update";
-                buttons.appendChild(deleteItem);
-                buttons.appendChild(updateItem);
+                const addcart = document.createElement('button');
+                addcart.textContent = "Add to cart";
+                addcart.addEventListener('click', () => addToCart(product));
                 item.appendChild(itemPic);
                 item.appendChild(itemName);
                 item.appendChild(itemDesc);
                 item.appendChild(itemPrice);
+                item.appendChild(addcart);
                 productList.appendChild(item);
             });
         });
@@ -92,4 +92,43 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
             displayProducts(searchQuery);
         });
     }
+    function displayCart() {
+        cart.innerHTML = '';
+        cartitem.forEach(product => {
+            const item = document.createElement('div');
+            item.className = "item";
+            item.id = `product-${product.id}`;
+            const itemName = document.createElement('p');
+            itemName.id = 'itemname';
+            itemName.textContent = product.proName;
+            itemName.style.fontWeight = "bold";
+            const itemPic = document.createElement('img');
+            itemPic.id = 'itempic';
+            itemPic.setAttribute('src', product.proImage);
+            const itemPrice = document.createElement('p');
+            itemPrice.id = 'itemprice';
+            itemPrice.textContent = '$' + product.proprice;
+            itemPrice.style.color = 'darkgray';
+            const itemDesc = document.createElement('p');
+            itemDesc.id = 'itemdesc';
+            itemDesc.textContent = product.prodesc;
+            const removebttn = document.createElement('button');
+            removebttn.textContent = "remove from cart";
+            removebttn.addEventListener('click', () => removefromcart(product));
+            item.appendChild(itemPic);
+            item.appendChild(itemName);
+            item.appendChild(itemDesc);
+            item.appendChild(itemPrice);
+            item.appendChild(removebttn);
+        });
+    }
+    function addToCart(product) {
+        cartitem.push(product);
+        displayCart();
+    }
+    function removefromcart(product) {
+        cartitem.filter(item => item.id !== product.id);
+        displayCart();
+    }
+    allProducts = (yield fetchProducts()).map(product => new Product(product.id, product.proImage, product.proName, product.proprice, product.prodesc));
 }));
