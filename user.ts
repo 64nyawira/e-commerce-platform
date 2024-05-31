@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const cart=document.getElementById('cart')as HTMLElement
     const viewbttn= document.getElementById("viewbttn") as HTMLElement
 
-    viewbttn.addEventListener('click',()=> displayCart())
+   
     if (!productList || !cart) return;
   
     let allProducts: Product[] = [];
@@ -103,7 +103,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     allProducts = await fetchProducts();
     displayProducts();
   
-   // Add search functionality
     if (searchInput) {
       searchInput.addEventListener('input', () => {
         const searchQuery = (searchInput as HTMLInputElement).value;
@@ -115,6 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function displayCart(){
         cart.innerHTML='';
+
         cartitem.forEach(product =>{
         const item = document.createElement('div');
         item.className = "item";
@@ -141,6 +141,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const removebttn= document.createElement('button')
         removebttn.textContent="remove from cart"
         removebttn.addEventListener('click',()=> removefromcart(product))
+
+        
   
 
         item.appendChild(itemPic);
@@ -148,10 +150,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         item.appendChild(itemDesc);
         item.appendChild(itemPrice);
         item.appendChild(removebttn)
+
+        cart.appendChild(item)
         })
+
+        
 
 
     }
+    function toggleCart(){
+        displayCart();
+        cart.classList.toggle('show');
+    }
+
+    viewbttn.addEventListener('click',()=> toggleCart())
+
     function addToCart(product:Product){
        cartitem.push(product)
        displayCart();

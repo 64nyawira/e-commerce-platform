@@ -199,6 +199,21 @@ button:hover{
     color: black;
 }
 
+#viewbttn{
+   
+}
+
+.display{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 10vh;
+}
+
+#addcart{
+
+}
+
 
 @media screen and (min-width:375px) {
     /* .item{

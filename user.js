@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
     const productList = document.getElementById("productlist");
     const cart = document.getElementById('cart');
     const viewbttn = document.getElementById("viewbttn");
-    viewbttn.addEventListener('click', () => displayCart());
     if (!productList || !cart)
         return;
     let allProducts = [];
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
     }
     allProducts = yield fetchProducts();
     displayProducts();
-    // Add search functionality
     if (searchInput) {
         searchInput.addEventListener('input', () => {
             const searchQuery = searchInput.value;
@@ -120,8 +118,14 @@ document.addEventListener('DOMContentLoaded', () => __awaiter(void 0, void 0, vo
             item.appendChild(itemDesc);
             item.appendChild(itemPrice);
             item.appendChild(removebttn);
+            cart.appendChild(item);
         });
     }
+    function toggleCart() {
+        displayCart();
+        cart.classList.toggle('show');
+    }
+    viewbttn.addEventListener('click', () => toggleCart());
     function addToCart(product) {
         cartitem.push(product);
         displayCart();
